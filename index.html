@@ -1,24 +1,201 @@
+
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portal de consulta de evaluaciones de proyectos y presentaciones finales UVG.">
+
+  <meta
+    name="description"
+    content="Portal de consulta de evaluaciones de proyectos y presentaciones finales UVG."
+  >
+
   <title>Evaluaciones de Proyectos UVG</title>
+
   <link rel="stylesheet" href="styles.css">
-  <script src="config-demo.js" defer></script>
+
+  <!-- Aplicación conectada a Cloudflare -->
   <script src="app.js" defer></script>
 </head>
+
 <body>
-  <header class="topbar"><div class="container topbar-inner"><div class="brand-mark" aria-hidden="true">UVG</div><div><strong>Evaluaciones de Proyectos UVG</strong><span>Proyectos y presentaciones finales</span></div></div></header>
+
+  <!-- ENCABEZADO -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-mark" aria-hidden="true">UVG</div>
+
+      <div>
+        <strong>Evaluaciones de Proyectos UVG</strong>
+        <span>Proyectos y presentaciones finales</span>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
-    <section class="hero"><span class="eyebrow">PORTAL ACADÉMICO · VERSIÓN DEMOSTRATIVA</span><h1>Resultados de proyectos y presentaciones finales</h1><p>Consulta la rúbrica de evaluación, el punteo por criterio y la retroalimentación del proyecto final.</p></section>
-    <div class="notice" role="note"><strong>Modo demostración.</strong> Los datos mostrados son ficticios. Esta versión no publica calificaciones reales ni valida credenciales en un servidor.</div>
-    <section class="panel" id="access-panel" aria-labelledby="access-title"><div class="panel-head"><h2 id="access-title">Consultar evaluación del proyecto</h2><p>Ingresa los tres datos del grupo para visualizar una evaluación de ejemplo.</p></div>
-      <form id="access-form" novalidate><div class="form-grid"><label>Sección<input id="section" name="section" inputmode="numeric" autocomplete="off" placeholder="Ejemplo: 20" required></label><label>Número de grupo<input id="group" name="group" inputmode="numeric" autocomplete="off" placeholder="Ejemplo: 1" required></label><label>Código de acceso<input id="code" name="code" autocomplete="off" placeholder="Código de demostración" required></label></div><p class="hint"><strong>Rúbrica inicial:</strong> sección <b>20</b>, grupo <b>1</b>, código <b>DEMO-UVG</b>.<br><strong>Otra rúbrica:</strong> sección <b>99</b>, grupo <b>2</b>, código <b>DEMO-AVANZADO</b>.</p><p class="error" id="form-error" role="alert" hidden></p><button type="submit">Ver evaluación de ejemplo</button></form>
+
+    <!-- PRESENTACIÓN -->
+    <section class="hero">
+      <span class="eyebrow">PORTAL ACADÉMICO · CONSULTA DE EVALUACIONES</span>
+
+      <h1>Resultados de proyectos y presentaciones finales</h1>
+
+      <p>
+        Consulta la rúbrica de evaluación, el punteo por criterio
+        y la retroalimentación de tu proyecto final.
+      </p>
     </section>
-    <section id="results" class="results" aria-labelledby="results-title" hidden><div class="results-heading"><div><span class="eyebrow">RESULTADO DE DEMOSTRACIÓN</span><h2 id="results-title">Evaluación del proyecto final</h2><p id="result-meta"></p></div><div class="score-box"><strong id="total-score">—</strong><span id="total-maximum">de — puntos</span></div></div><div class="panel"><h3>Rúbrica y retroalimentación</h3><p id="rubric-name" class="rubric-name"></p><div id="rubric"></div><div class="feedback"><h3>Retroalimentación general</h3><p id="general-feedback"></p></div></div><button id="back-button" class="secondary" type="button">Consultar otro grupo</button></section>
+
+    <!-- AVISO -->
+    <div class="notice" role="note">
+      <strong>Consulta individual por grupo.</strong>
+      Para acceder a una evaluación, ingresa la sección,
+      el número de grupo y el código de acceso proporcionado
+      por el docente. Los resultados estarán disponibles
+      únicamente cuando sean publicados.
+    </div>
+
+    <!-- FORMULARIO -->
+    <section
+      class="panel"
+      id="access-panel"
+      aria-labelledby="access-title"
+    >
+
+      <div class="panel-head">
+        <h2 id="access-title">Consultar evaluación del proyecto</h2>
+
+        <p>
+          Ingresa los tres datos de tu grupo para consultar
+          la evaluación, cuando esté disponible.
+        </p>
+      </div>
+
+      <form id="access-form" novalidate>
+
+        <div class="form-grid">
+
+          <label>
+            Sección
+            <input
+              id="section"
+              name="section"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Ejemplo: 20"
+              required
+            >
+          </label>
+
+          <label>
+            Número de grupo
+            <input
+              id="group"
+              name="group"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Ejemplo: 1"
+              required
+            >
+          </label>
+
+          <label>
+            Código de acceso
+            <input
+              id="code"
+              name="code"
+              autocomplete="off"
+              autocapitalize="characters"
+              spellcheck="false"
+              maxlength="8"
+              placeholder="APB-XXXX"
+              required
+            >
+          </label>
+
+        </div>
+
+        <p class="hint">
+          <strong>Importante:</strong>
+          Utiliza el código de acceso asignado a tu grupo.
+          Si no cuentas con él, solicítalo al docente.
+        </p>
+
+        <p
+          class="error"
+          id="form-error"
+          role="alert"
+          hidden
+        ></p>
+
+        <button type="submit">
+          Consultar evaluación
+        </button>
+
+      </form>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section
+      id="results"
+      class="results"
+      aria-labelledby="results-title"
+      hidden
+    >
+
+      <div class="results-heading">
+
+        <div>
+          <span class="eyebrow">RESULTADO DE EVALUACIÓN</span>
+
+          <h2 id="results-title">
+            Evaluación del proyecto final
+          </h2>
+
+          <p id="result-meta"></p>
+        </div>
+
+        <div class="score-box">
+          <strong id="total-score">—</strong>
+          <span id="total-maximum">de — puntos</span>
+        </div>
+
+      </div>
+
+      <div class="panel">
+
+        <h3>Rúbrica y retroalimentación</h3>
+
+        <p id="rubric-name" class="rubric-name"></p>
+
+        <div id="rubric"></div>
+
+        <div class="feedback">
+          <h3>Retroalimentación general</h3>
+          <p id="general-feedback"></p>
+        </div>
+
+      </div>
+
+      <button
+        id="back-button"
+        class="secondary"
+        type="button"
+      >
+        Consultar otro grupo
+      </button>
+
+    </section>
+
   </main>
-  <footer><div class="container">Proyecto académico UVG · Consulta de proyectos y presentaciones finales · Prototipo no oficial de la universidad</div></footer>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="container">
+      Proyecto académico UVG · Consulta de proyectos y
+      presentaciones finales · Prototipo no oficial de la universidad
+    </div>
+  </footer>
+
 </body>
 </html>
