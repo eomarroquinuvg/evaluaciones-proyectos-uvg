@@ -5,69 +5,71 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta
-    name="description"
-    content="Portal de consulta de evaluaciones de proyectos y presentaciones finales UVG."
-  >
+  <meta name="description"
+        content="Resultados de presentaciones y proyectos de los cursos impartidos por el docente Erick Oswaldo Marroquín Zamora.">
 
-  <title>Evaluaciones de Proyectos UVG</title>
+  <title>Resultados de Presentaciones | Erick Marroquín</title>
+
+  <link rel="icon" type="image/png" href="assets/logo-uvg.png">
+  <link rel="apple-touch-icon" href="assets/logo-uvg.png">
 
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Aplicación conectada a Cloudflare -->
   <script src="app.js" defer></script>
 </head>
 
 <body>
 
-  <!-- ENCABEZADO -->
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand-mark" aria-hidden="true">UVG</div>
+
+      <img
+        src="assets/logo-uvg.png"
+        alt="Universidad del Valle de Guatemala"
+        class="uvg-logo"
+      >
 
       <div>
-        <strong>Evaluaciones de Proyectos UVG</strong>
-        <span>Proyectos y presentaciones finales</span>
+        <strong>Resultados de Presentaciones y Proyectos</strong>
+        <span>Docente Erick Oswaldo Marroquín Zamora</span>
       </div>
+
     </div>
   </header>
 
   <main class="container">
 
-    <!-- PRESENTACIÓN -->
     <section class="hero">
-      <span class="eyebrow">PORTAL ACADÉMICO · CONSULTA DE EVALUACIONES</span>
+      <span class="eyebrow">
+        EVALUACIONES Y RETROALIMENTACIÓN
+      </span>
 
-      <h1>Resultados de proyectos y presentaciones finales</h1>
+      <h1>Resultados de presentaciones y proyectos de cursos</h1>
 
       <p>
-        Consulta la rúbrica de evaluación, el punteo por criterio
-        y la retroalimentación de tu proyecto final.
+        Consulta las calificaciones, los criterios de evaluación
+        y la retroalimentación de los proyectos y presentaciones
+        de los cursos impartidos por el docente
+        Erick Oswaldo Marroquín Zamora.
       </p>
     </section>
 
-    <!-- AVISO -->
     <div class="notice" role="note">
       <strong>Consulta individual por grupo.</strong>
       Para acceder a una evaluación, ingresa la sección,
-      el número de grupo y el código de acceso proporcionado
-      por el docente. Los resultados estarán disponibles
-      únicamente cuando sean publicados.
+      el número de grupo y el código proporcionado por el docente.
+      Los resultados estarán disponibles únicamente
+      cuando sean publicados.
     </div>
 
-    <!-- FORMULARIO -->
-    <section
-      class="panel"
-      id="access-panel"
-      aria-labelledby="access-title"
-    >
+    <section class="panel"
+             id="access-panel"
+             aria-labelledby="access-title">
 
       <div class="panel-head">
-        <h2 id="access-title">Consultar evaluación del proyecto</h2>
-
+        <h2 id="access-title">Consultar evaluación</h2>
         <p>
-          Ingresa los tres datos de tu grupo para consultar
-          la evaluación, cuando esté disponible.
+          Ingresa los datos de tu grupo para consultar
+          los resultados de tu presentación o proyecto.
         </p>
       </div>
 
@@ -83,8 +85,7 @@
               inputmode="numeric"
               autocomplete="off"
               placeholder="Ejemplo: 20"
-              required
-            >
+              required>
           </label>
 
           <label>
@@ -95,8 +96,7 @@
               inputmode="numeric"
               autocomplete="off"
               placeholder="Ejemplo: 1"
-              required
-            >
+              required>
           </label>
 
           <label>
@@ -109,8 +109,7 @@
               spellcheck="false"
               maxlength="8"
               placeholder="APB-XXXX"
-              required
-            >
+              required>
           </label>
 
         </div>
@@ -121,12 +120,10 @@
           Si no cuentas con él, solicítalo al docente.
         </p>
 
-        <p
-          class="error"
-          id="form-error"
-          role="alert"
-          hidden
-        ></p>
+        <p class="error"
+           id="form-error"
+           role="alert"
+           hidden></p>
 
         <button type="submit">
           Consultar evaluación
@@ -135,13 +132,10 @@
       </form>
     </section>
 
-    <!-- RESULTADOS -->
-    <section
-      id="results"
-      class="results"
-      aria-labelledby="results-title"
-      hidden
-    >
+    <section id="results"
+             class="results"
+             aria-labelledby="results-title"
+             hidden>
 
       <div class="results-heading">
 
@@ -163,7 +157,6 @@
       </div>
 
       <div class="panel">
-
         <h3>Rúbrica y retroalimentación</h3>
 
         <p id="rubric-name" class="rubric-name"></p>
@@ -174,14 +167,12 @@
           <h3>Retroalimentación general</h3>
           <p id="general-feedback"></p>
         </div>
-
       </div>
 
       <button
         id="back-button"
         class="secondary"
-        type="button"
-      >
+        type="button">
         Consultar otro grupo
       </button>
 
@@ -189,11 +180,10 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
   <footer>
     <div class="container">
-      Proyecto académico UVG · Consulta de proyectos y
-      presentaciones finales · Prototipo no oficial de la universidad
+      Resultados de Presentaciones y Proyectos ·
+      Docente Erick Oswaldo Marroquín Zamora
     </div>
   </footer>
 
