@@ -50,9 +50,12 @@ function renderResult(d){
  const root=$('result');root.replaceChildren();root.hidden=false;
  const top=element('div','result-summary');
  const left=element('div');left.append(element('div','result-eyebrow','RESULTADO DE EVALUACIÓN'),element('h2','', 'Evaluación del proyecto final'),element('p','',`${d.title} · ${d.year} · Sección ${d.section} · Grupo ${d.group}`));
- const grade=element('div','result-grade');grade.append(element('strong','',d.grade===null?'—':number(d.grade)),element('span','','de 10 puntos'));
- const raw=element('div','result-raw',d.total===null?'Sin calificación':`${number(d.total)} de ${number(d.maximum)} puntos en la rúbrica original`);
- top.append(left,grade);root.append(top,raw);
+ const maximum=Number(d.maximum);
+ const total=Number(d.total);
+ const hasGrade=d.total!==null && d.total!==undefined && d.maximum!==null && d.maximum!==undefined && Number.isFinite(total) && Number.isFinite(maximum) && maximum>0;
+ const grade100=hasGrade?(total/maximum)*100:null;
+ const grade=element('div','result-grade');grade.append(element('strong','',grade100===null?'—':grade100.toFixed(2)),element('span','','de 100 puntos'));
+ top.append(left,grade);root.append(top);
  const card=element('div','result-rubric-card');card.append(element('h2','','Rúbrica y retroalimentación'),element('p','',`${d.title} · ${d.course} ${d.year}`));
  if(Array.isArray(d.criteria)&&d.criteria.length){
    for(const c of d.criteria){
