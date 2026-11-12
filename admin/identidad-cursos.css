@@ -1,12 +1,133 @@
-/* Identidad de cursos UVG – independiente de la lógica de evaluación */
-.institutional-header{background:#fff!important;color:#15271d!important;border-top:4px solid #008D36;border-bottom:1px solid #dce7df;padding:18px 0!important}
-.institutional-head{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.institutional-brand{display:flex;align-items:center;gap:18px}
-.institutional-brand img{width:72px;height:72px;object-fit:contain;background:transparent;border-radius:0;padding:0}
-.institutional-brand strong{display:block;font-size:18px}
-.institutional-brand small{display:block;font-size:13px;color:#62776a;margin-top:5px}
-.institutional-location{font-size:14px;color:#315b42}
-.institutional-footer{border-top:4px solid #008D36;margin-top:38px;padding:23px 0 30px;color:#60776a;font-size:13px;background:#fff;line-height:1.5}
-.institutional-footer .wrap{max-width:1120px}
-.result-footer{padding-bottom:30px!important}
-@media(max-width:560px){.institutional-brand img{width:60px;height:60px}.institutional-location{padding-left:78px}.institutional-brand strong{font-size:16px}}
+/* =========================================================
+   APLICACIÓN PROYECTOS UVG — IDENTIDAD INSTITUCIONAL
+   Aplica a: administrador, evaluadores y resultados.
+   Modificaciones visuales únicamente; no altera las notas.
+   ========================================================= */
+
+/* Página completa: footer abajo si hay poco contenido,
+   y después del contenido cuando la página es larga. */
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: #f4f7f5;
+}
+
+/* Los tres HTML existentes tienen header, main y footer
+   como hijos directos del body. No es necesario tocarlos. */
+body > header {
+  flex-shrink: 0;
+}
+
+body > main {
+  flex: 1 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+/* .wrap tiene margin:auto en styles.css; evitamos que
+   ese estilo centre verticalmente el contenido principal. */
+body > main.wrap {
+  margin: 0 auto;
+}
+
+/* Encabezado institucional */
+.institutional-header {
+  background: #fff !important;
+  color: #15271d !important;
+  border-top: 4px solid #008D36;
+  border-bottom: 1px solid #dce7df;
+  padding: 18px 0 !important;
+}
+
+.institutional-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.institutional-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.institutional-brand img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+.institutional-brand strong {
+  display: block;
+  font-size: 18px;
+}
+
+.institutional-brand small {
+  display: block;
+  font-size: 13px;
+  color: #62776a;
+  margin-top: 5px;
+}
+
+.institutional-location {
+  font-size: 14px;
+  color: #315b42;
+}
+
+/* Pie de página institucional: ocupa el ancho completo
+   y se coloca al fondo sin superponerse al contenido. */
+body > footer.institutional-footer {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: auto !important;
+  padding: 22px 0 24px !important;
+  border-top: 4px solid #008D36;
+  border-bottom: 4px solid #008D36;
+  background: #fff;
+  color: #60776a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.institutional-footer .wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* La pantalla pública usa también la clase result-footer. */
+body > footer.result-footer {
+  margin-top: auto !important;
+  padding: 22px 0 24px !important;
+  max-width: none !important;
+}
+
+@media (max-width: 560px) {
+  .institutional-brand img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .institutional-location {
+    padding-left: 78px;
+  }
+
+  .institutional-brand strong {
+    font-size: 16px;
+  }
+
+  .institutional-footer .wrap {
+    padding: 0 18px;
+  }
+}
