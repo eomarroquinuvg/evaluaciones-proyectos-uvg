@@ -4,3 +4,9 @@
 .brand{display:inline-flex;align-items:center;gap:12px}
 .brand img{height:40px;width:40px;object-fit:contain;background:white;border-radius:5px;padding:3px}
 .status-note{border:1px solid #b8dac5;background:#edf8f0;color:#155d34;border-radius:9px;padding:14px;margin:14px 0}
+
+/* Rúbrica finalizada: conservar la selección visible sin permitir cambios. */
+.level:disabled { opacity: 1; cursor: default; }
+.level.selected:disabled { background:#008D36; border-color:#008D36; color:#fff; }
+.level:disabled:hover { filter:none; }
+.rubric textarea[readonly], #overall[readonly] { background:#f4f7f5; color:#26392e; cursor:default; }
