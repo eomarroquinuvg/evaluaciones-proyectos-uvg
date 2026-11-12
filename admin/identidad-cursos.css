@@ -1,0 +1,12 @@
+/* Identidad de cursos UVG – independiente de la lógica de evaluación */
+.institutional-header{background:#fff!important;color:#15271d!important;border-top:4px solid #008D36;border-bottom:1px solid #dce7df;padding:18px 0!important}
+.institutional-head{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.institutional-brand{display:flex;align-items:center;gap:18px}
+.institutional-brand img{width:72px;height:72px;object-fit:contain;background:transparent;border-radius:0;padding:0}
+.institutional-brand strong{display:block;font-size:18px}
+.institutional-brand small{display:block;font-size:13px;color:#62776a;margin-top:5px}
+.institutional-location{font-size:14px;color:#315b42}
+.institutional-footer{border-top:4px solid #008D36;margin-top:38px;padding:23px 0 30px;color:#60776a;font-size:13px;background:#fff;line-height:1.5}
+.institutional-footer .wrap{max-width:1120px}
+.result-footer{padding-bottom:30px!important}
+@media(max-width:560px){.institutional-brand img{width:60px;height:60px}.institutional-location{padding-left:78px}.institutional-brand strong{font-size:16px}}

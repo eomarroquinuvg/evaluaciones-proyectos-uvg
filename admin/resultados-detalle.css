@@ -37,3 +37,6 @@
 .result-footer{font-size:13px;color:#60786a;padding-bottom:35px}
 @media(max-width:850px){.result-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.result-summary{align-items:flex-start}}
 @media(max-width:550px){.result-fields{grid-template-columns:1fr}.result-summary{flex-direction:column}.result-grade{width:100%}.result-rubric-card{padding:17px}.result-title{font-size:29px}.result-criterion-head{font-size:14px}.result-head{font-size:15px}}
+
+/* Pie de página institucional: línea verde inferior */
+.result-footer{max-width:none!important;margin-top:35px!important;padding-top:24px!important}
